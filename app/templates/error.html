@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block body %}
+  <h2>{{ title }}</h2>
+  {% if error %}<p class="error"><strong>Error:</strong> {{ error }}{% endif %}
+  <a href="/">Go Home</a>
+{% endblock %}

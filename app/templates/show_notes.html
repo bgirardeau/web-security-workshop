@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+  {% if current_user.is_authenticated %}
+    <form action="{{ url_for('add_note') }}" method="post" class="add-entry">
+      <dl>
+        <dt>Title:
+        <dd><input type="text" size="30" name="title">
+        <dt>Text:
+        <dd><textarea name="text" rows="5" cols="40"></textarea>
+	<dt>Public: <input type="checkbox" name="public" checked>
+        <dd><input type="submit" value="Share Note">
+      </dl>
+    </form>
+  {% endif %}
+  <p>
+  <div class="notes">
+  {% for entry in notes %}
+    {% if entry.public == 1 or entry.author == current_user.id %}
+    <div>
+      <span id="note_{{ entry.id }}">
+	<h2>{{ entry.title }}</h2>
+	{{ entry.text|safe }}
+	<br>
+        -- {{ entry.username }}
+	{% if current_user.id == entry.author %}
+	<form action="{{ url_for('remove_note') }}" method="post">
+	  <input type="hidden" name="id" value="{{entry.id}}">
+	  <input type="submit" value="Delete">
+	</form>
+	{% endif %}
+      </span>
+    </div>
+    {% endif %}
+  {% else %}
+    <div><em>No notes yet!</em></div>
+  {% endfor %}
+  </div>
+{% endblock %}
