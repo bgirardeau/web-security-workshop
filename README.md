@@ -5,27 +5,27 @@ Meant for educational purposes only, be cautious reusing code in other applicati
 
 ## Setup
 
- 1. Get the code
+- Get the code
 
 ```
 $ git clone https://github.com/bgirardeau/web-security-workshop
 $ cd web-security-workshop
 ```
 
-2. (Optional) Create a Python virtualenv
+- (Optional) Create a Python virtualenv
 
 ```
 $ virtualenv venv
 $ source venv/bin/activate
  ```
 
-3. Install Python requirements
+- Install Python requirements
 
 ``` 
 $ pip install -r requirements.txt
 ```
 
-4. Create the database
+- Create the database
 
 ```
 $ FLASK_APP=app/app.py flask initdb
