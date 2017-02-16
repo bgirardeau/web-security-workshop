@@ -1,7 +1,7 @@
 # Notes Application
-This is an insecure demo application for the web security workshop.
+This is an insecure demo application for a web security workshop. It's vulnerable to SQL injection, XSS, CSRF, and insecure password storage (plain text).
 
-You can try it out at http://45.55.21.119:8080/. Don't use any sensitive information or passwords!
+Meant for educational purposes only, be cautious reusing code in other applications.
 
 ## Setup
 
